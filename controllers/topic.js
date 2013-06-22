@@ -153,7 +153,7 @@ exports.put = function (req, res, next) {
 
       var proxy = new EventProxy();
       var render = function () {
-        res.redirect('/topic/' + topic.Topic_id);
+        res.redirect('/topic/' + Topic.topic_id);
       };
 
       proxy.assign('tags_saved', 'score_saved', render);
@@ -183,7 +183,7 @@ exports.put = function (req, res, next) {
       }));
 
       //发送at消息
-      at.sendMessageToMentionUsers(content, topic.Topic_id, req.session.user._id);
+      at.sendMessageToMentionUsers(content, Topic.topic_id, req.session.user._id);
     });
   }
 };
