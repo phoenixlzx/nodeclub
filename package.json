@@ -6,8 +6,13 @@
   "customHost": ["cnodejs.org", "club.cnodejs.org"],
   "dependencies": {
     "express": "2.5.1",
+<<<<<<< HEAD
     "ejs": "0.8.0",
     "eventproxy": "0.2.2",
+=======
+    "ejs": "0.8.4",
+    "eventproxy": "0.2.5",
+>>>>>>> 34ab78ed8afef6b203c1780aad551660cab4e5f9
     "mongoose": "2.7.3",
     "node-markdown": "0.1.0",
     "validator": "0.3.7",
