@@ -165,9 +165,7 @@ a.light:hover {
 .panel .inner.topic, .panel .inner.reply, .panel .inner.userinfo, .panel .inner.post {
     padding: 10px;
 }
-.topic {
-  width: 750px !important;
-}
+
 #sidebar .panel .inner {
     padding: 10px;
 }
@@ -408,6 +406,7 @@ a.user_avatar:hover {
 .user_action {}
 .reply_content .markdown-text {
   margin-left: 50px;
+  width: 750px;
 }
 .reply_editor {
   height: 80px;
