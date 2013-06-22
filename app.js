@@ -55,6 +55,8 @@ app.configure(function () {
   });
 });
 
+app.settings.env = 'production';
+
 if (process.env.NODE_ENV !== 'test') {
   // plugins
   var plugins = config.plugins || [];
