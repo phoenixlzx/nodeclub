@@ -745,7 +745,6 @@ div[class$=part] {
   width: 300px;
 }
 .topic_content{
-  width: 750px !important;
 }
 textarea, input[type="text"], input[type="password"], input[type="datetime"],
 input[type="datetime-local"], input[type="date"], input[type="month"],
