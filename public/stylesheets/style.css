@@ -158,6 +158,7 @@ a.light:hover {
 }
 .panel .inner {
   line-height: 27px;
+  padding: 4px;
 }
 .panel .inner .unstyled li div {
   text-overflow: ellipsis;
