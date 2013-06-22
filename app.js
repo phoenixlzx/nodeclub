@@ -8,10 +8,8 @@
 
 var fs = require('fs');
 var path = require('path');
-var Loader = require('loader');
 var express = require('express');
 var ndir = require('ndir');
-var assets = JSON.parse(fs.readFileSync(path.join(__dirname, 'assets.json')));
 var pkg = JSON.parse(fs.readFileSync(path.join(__dirname, 'package.json')));
 var config = require('./config').config;
 config.version = pkg.version;
@@ -33,8 +31,9 @@ var app = express.createServer();
 
 // configuration in all env
 app.configure(function () {
+  var viewsRoot = path.join(__dirname, 'views');
   app.set('view engine', 'html');
-  app.set('views', path.join(__dirname, 'views'));
+  app.set('views', viewsRoot);
   app.register('.html', require('ejs'));
   app.use(express.bodyParser({
     uploadDir: config.upload_dir
@@ -67,9 +66,7 @@ if (process.env.NODE_ENV !== 'test') {
 
 // set static, dynamic helpers
 app.helpers({
-  config: config,
-  Loader: Loader,
-  assets: assets
+  config: config
 });
 app.dynamicHelpers(require('./common/render_helpers'));
 
@@ -80,12 +77,12 @@ app.use('/user_data/', express.static(path.join(__dirname, 'public', 'user_data'
 
 var staticDir = path.join(__dirname, 'public');
 app.configure('development', function () {
-  app.use('/public', express.static(staticDir));
+  app.use(express.static(staticDir));
   app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
 });
 
 app.configure('production', function () {
-  app.use('/public', express.static(staticDir, { maxAge: maxAge }));
+  app.use(express.static(staticDir, { maxAge: maxAge }));
   app.use(express.errorHandler());
   app.set('view cache', true);
 });
