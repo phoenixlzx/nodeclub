@@ -183,7 +183,7 @@ exports.put = function (req, res, next) {
       }));
 
       //发送at消息
-      at.sendMessageToMentionUsers(content, topic._id, req.session.user._id);
+      at.sendMessageToMentionUsers(content, Topic._id, req.session.user._id);
     });
   }
 };
