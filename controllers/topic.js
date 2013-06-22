@@ -153,7 +153,7 @@ exports.put = function (req, res, next) {
 
       var proxy = new EventProxy();
       var render = function () {
-        res.redirect('/topic/' + topic._id);
+        res.redirect('/topic/' + Topic._id);
       };
 
       proxy.assign('tags_saved', 'score_saved', render);
