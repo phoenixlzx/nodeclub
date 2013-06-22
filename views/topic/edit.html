@@ -76,7 +76,7 @@
           <label class='bold' for='title'>标题</label>
           <textarea class='span9' id='title' name='title' rows='1' placeholder="请在此输入标题，字数控制在4到100个之间"><%= locals.title || '' %></textarea>
           <label class='bold' for='t_content'>内容</label>
-          <textarea class='editor' id='wmd-input' name='t_content' rows='20'><%= locals.content || '' %></textarea>
+          <textarea class='ckeditor' id='wmd-input' name='t_content' rows='20'><%= locals.content || '' %></textarea>
 
           <input type='hidden' id='topic_tags' name='topic_tags' value=''></input>
           <input type='hidden' name='_csrf' value='<%= csrf %>' />
@@ -93,9 +93,12 @@
 <!-- markdown editor -->
 <!-- <script src='/libs/pagedown/Markdown.Converter.js'></script>
 <script src='/libs/showdown.js'></script>
-<script src='/libs/pagedown/Markdown.Editor.js'></script> -->
+<script src='/libs/pagedown/Markdown.Editor.js'></script> 
 <script src='/libs/ace/ace.js'></script>
 <script src='/javascripts/editor.js'></script>
+-->
+<script src='/ckeditor/ckeditor.js'></script>
+
 
 <script>
 $(function () {
