@@ -150,10 +150,10 @@ exports.put = function (req, res, next) {
       if (err) {
         return next(err);
       }
-
+console.log(topic);
       var proxy = new EventProxy();
       var render = function () {
-        res.redirect('/topic/' + Topic.topic_id);
+        res.redirect('/topic/' + topic._id);
       };
 
       proxy.assign('tags_saved', 'score_saved', render);
@@ -183,7 +183,7 @@ exports.put = function (req, res, next) {
       }));
 
       //发送at消息
-      at.sendMessageToMentionUsers(content, Topic.topic_id, req.session.user._id);
+      at.sendMessageToMentionUsers(content, topic._id, req.session.user._id);
     });
   }
 };
