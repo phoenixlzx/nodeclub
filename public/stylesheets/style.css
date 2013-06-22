@@ -481,6 +481,7 @@ img.unread {
 }
 .markdown-text {
   white-space: pre;
+  width: 750px;
 }
 /* markdown editor */
 .wmd-button-bar {
